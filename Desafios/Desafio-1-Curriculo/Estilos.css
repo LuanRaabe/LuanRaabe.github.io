@@ -1,0 +1,257 @@
+* {
+    box-sizing: content-box
+}
+
+body {
+    padding-top: 2em;
+    background-color: rgb(164, 190, 218);
+    font-family: 'Chilanka', cursive;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    border: solid black;
+}
+
+.barradesecao {
+    background-color: rgba(117, 117, 117, 0.616);
+    width: 90%;
+    height: 1px;
+    margin: 1em;
+}
+
+h1, h2 {
+    text-align: center;
+    padding: 1em 0em 1em 0em;
+}
+
+h1 {
+    font-size: 90%;
+    width: 100%;
+    background-color: rgb(224, 222, 222);
+}
+
+h2 {
+    font-size: 90%;
+}
+
+h3 {
+    background-color: rgb(218, 211, 206);
+    text-align: center;
+    width: 90%;
+}
+
+#capa {
+    display: flex;
+    flex-flow: row;
+    width: 80%;
+    background-image: url('images/fundo.png');
+    background-size: 100%;
+    padding: 5%;
+    margin-bottom: 2em;
+}
+
+#cracha {
+    background-color: rgba(255, 250, 250, 0.582);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20em;
+    padding: 1em;
+}
+
+#minhafoto {
+    border-style: solid;
+    border-width: 0,1em;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 50%;
+    height: 50%;
+}
+#informacoes {
+    width: 60%;
+}
+
+#apresentacao {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    font-size: 2em;
+    text-align: left;
+    font-weight: lighter;
+    color: rgba(255, 250, 250, 1);
+}
+
+#baixar {
+    margin: -3.6em 2em 0em 5em;
+    width: 10em;
+    background-color: rgba(245, 245, 245, 0.678);
+    padding: 1em;
+    text-align: center;
+}
+
+#informacoestecnicas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+#habilidades {
+    text-align: right;
+    font-size: 1em;
+    margin-bottom: 2%;
+}
+
+li {
+    list-style: none;
+}
+
+#barra {
+    width: 1px;
+    height: 9em;
+    background-color: rgb(0, 0, 0);
+    margin: 1em -1em 0em 1em;
+}
+
+.barra-de-progresso{
+    --progress: var(--numero);
+    height: 0.9em;
+    width: 12em;
+    padding: 5px;
+    display: flex;
+}
+
+.barra-de-progresso::before{
+    content: "";
+    width: calc(var(--progress) * 1%);
+    background-color: hsl( calc(var(--progress) * 1.2) , 80%, 40%);
+    transition: all 0.2s ease;
+}
+
+#progresso-HTML {
+    --numero: 60;
+}
+
+#progresso-CSS {
+    --numero: 40;
+}
+
+#progresso-JS {
+    --numero: 5;
+}
+
+#progresso-Photoshop {
+    --numero: 30;
+}
+
+#progresso-Redes {
+    --numero: 20;
+}
+
+#progresso-LOL {
+    --numero: 10;
+}
+
+#outrasinformacoes {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2em;
+}
+
+#informacoespessoais {
+    text-align: right;
+    font-size: 1em;
+    width: 22.5em;
+}
+
+#informacoespessoais>ul>li {
+    margin-bottom: 1em;
+}
+
+#descricao {
+    width: 30em;
+}
+
+#descricao>ul>li {
+    margin-bottom: 1em;
+}
+
+#formacoes {
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-between;
+    text-align: center;
+}
+
+#formacoes>div {
+    width: 20%;
+}
+
+#barrah {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 1em;
+}
+
+#linhah {
+    background-color: black;
+    width: 90%;
+    height: 1px;
+    margin-top: -1.6em;
+    margin-bottom: 1em;
+}
+
+#barrah>img {
+    width: 1.5%;
+}
+
+#datas {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-between;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#datas>div {
+    width: 15%;
+}
+
+#contato {
+    width: 90%;
+    padding: 5%;
+}
+
+#redessociais {
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#redessociais img {
+    width: 5%;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(61, 61, 61);
+}
+
+a:hover {
+    color: blue;
+}
+
+a:visited {
+    color: rgb(97, 0, 97);
+}
