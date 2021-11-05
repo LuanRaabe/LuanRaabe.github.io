@@ -1,5 +1,5 @@
 * {
-    box-sizing: content-box
+    box-sizing: border-box;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
     flex-flow: column;
     border: solid black;
     margin: 3em;
-    width: 76em;
+    width: 77em;
 }
 
 .barradesecao {
@@ -52,7 +52,7 @@ h3 {
 #capa {
     display: flex;
     flex-flow: row;
-    width: 90%;
+    width: 100%;
     background-image: url('images/fundo.png');
     background-size: 100%;
     padding: 5%;
@@ -232,7 +232,7 @@ li {
 .barra-de-progresso{
     background-color: #CCC;
     --progress: var(--numero);
-    height: 0.7em;
+    height: 1.3em;
     margin: 0.32em;
     width: 12em;
     padding: 5px;
