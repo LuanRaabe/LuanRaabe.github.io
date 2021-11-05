@@ -4,10 +4,12 @@
 
 body {
     background-color: #6d6d6d;
+    display: flex;
+    justify-content: center;
 }
 
 #curriculo {
-    box-shadow: 10px 10px 10px black;
+    box-shadow: 10px 10px 20px #191919;
     background-color: rgb(164, 190, 218);
     font-family: 'Chilanka', cursive;
     font-family: 'Poppins', sans-serif;
@@ -16,6 +18,7 @@ body {
     flex-flow: column;
     border: solid black;
     margin: 3em;
+    width: 76em;
 }
 
 .barradesecao {
