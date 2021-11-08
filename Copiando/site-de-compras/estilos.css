@@ -396,6 +396,43 @@ input[type="radio"] {
    border-radius: 2em;
 }
 
+#store {
+   flex-direction: column;
+}
+
+#product-list {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   margin-bottom: 20px;
+}
+
+.product {
+   width: 300px;
+   height: 365px;
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.product img {
+   width: 300px;
+   height: 300px;
+}
+
+.name-product {
+   font-family: 'Open Sans', sans-serif;
+   font-size: 20px;
+   font-weight: 700;
+   color: #414141;
+   margin-top: 10px;
+}
+
+.price-product {
+   font-family: 'Open Sans Condensed', sans-serif;
+   font-weight: 700;
+   color: #99a6c3;
+}
+
 #about-us {
    flex-direction: column;
    align-items: center;
