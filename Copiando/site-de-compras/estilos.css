@@ -297,7 +297,7 @@ input[type="radio"] {
 }
 
 #ad-toy-car:hover {
-   background-color: #47a1dc;
+   background-color: #47a0dc99;
 }
 
 #ad-toy-car .add-cart {
@@ -329,7 +329,7 @@ input[type="radio"] {
 }
 
 #ad-toy-tools:hover {
-   background-color: #9dbf19;
+   background-color: #9ebf1999;
 }
 
 #ad-toy-tools .add-cart {
@@ -361,7 +361,7 @@ input[type="radio"] {
 }
 
 #ad-toy-seesaw:hover {
-   background-color: #f4c103;
+   background-color: #f4c10399;
 }
 
 #ad-toy-seesaw .add-cart {
@@ -592,6 +592,8 @@ input[type="radio"] {
    height: 3em;
    width: 25em;
 }
+
+#participe input[type="email"]::-webkit-input-placeholder  { color:#ffffff; }
 
 #participe input[type="email"]:hover {
    background-color: #f8aba2;
