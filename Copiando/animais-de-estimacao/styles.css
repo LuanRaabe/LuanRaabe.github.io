@@ -280,6 +280,20 @@ header img {
    justify-content: space-between;
 }
 
+#lets-chat {
+   display: flex;
+   padding: 20px 20px;
+   background-color: #3a54b4;
+   border-radius: 10px;
+   color: #fff;
+   font-weight: 700;
+   text-align: center;
+   letter-spacing: 1px;
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+}
+
 footer {
    text-align: center;
 }
