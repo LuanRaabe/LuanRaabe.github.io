@@ -9,31 +9,26 @@ function total() {
 function orderBread(typeOfBread) {
   let bread = document.getElementById("bread");
   let pBread = document.getElementById("pBread");
-  switch (typeOfBread) {
-    case 1:
+    if (typeOfBread == 1) {
       bread.textContent = "Pão francês";
       pBread.textContent = "R$ 3,00"
       price[0] = 3.00;
       total();
-      break;
-    case 2:
+  } else if (typeOfBread == 2) {
       bread.textContent = "Pão Australiano";
       pBread.textContent = "R$ 8,00"
       price[0] = 8.00;
       total();
-      break;
-    case 3:
+  } else if (typeOfBread == 3) {
       bread.textContent = "Pão Brioche";
       pBread.textContent = "R$ 6,00"
       price[0] = 6.00;
       total();
-      break;
-    default:
+  } else {
       bread.textContent = "Sem pão";
       pBread.textContent = "R$ 0,00"
       price[0] = 0.00;
       total();
-      break;
   }
 }
 
