@@ -1,113 +1,67 @@
-class Car {
-  constructor(minSp, maxSp, skd) {
-    this._minimumSpeed = minSp;
-    this._maximumSpeed = maxSp;
-    this._skid = skd;
-  }
-
-  set minimumSpeed(string) {
-    this._minimumSpeed = string;
-  }
-  set maximumSpeed(string) {
-    this._maximumSpeed = string;
-  }
-  set skid(string) {
-    this._skid = string;
-  }
-
-  get minimumSpeed() {
-    return this._minimumSpeed;
-  }
-  get maximumSpeed() {
-    return this._maximumSpeed;
-  }
-  get skid() {
-    return this._skid;
-  }
-}
-
-var popular = {
-  maxVelVar: [180, 200],
-  minVelVar: [110, 130],
-  skidVar: [0.03, 0.04],
-  definitions: function () {
-    let max = (Math.random() * (this.maxVelVar[1] - this.maxVelVar[0]) + this.maxVelVar[0]);
-    let min = (Math.random() * (this.minVelVar[1] - this.minVelVar[0]) + this.minVelVar[0]);
-    let skid = (Math.random() * (this.skidVar[1] - this.skidVar[0]) + this.skidVar[0]);
-    return {
-      min,
-      max,
-      skid
-    };
-  }
-}
-
-var sport = {
-  maxVelVar: [195, 215],
-  minVelVar: [125, 145],
-  skidVar: [0.02, 0.03],
-  definitions: function () {
-    let max = (Math.random() * (this.maxVelVar[1] - this.maxVelVar[0]) + this.maxVelVar[0]);
-    let min = (Math.random() * (this.minVelVar[1] - this.minVelVar[0]) + this.minVelVar[0]);
-    let skid = (Math.random() * (this.skidVar[1] - this.skidVar[0]) + this.skidVar[0]);
-    return {
-      min,
-      max,
-      skid
-    };
-  }
-}
-
-var superSport = {
-  maxVelVar: [210, 230],
-  minVelVar: [140, 160],
-  skidVar: [0.01, 0.0175],
-  definitions: function () {
-    let max = (Math.random() * (this.maxVelVar[1] - this.maxVelVar[0]) + this.maxVelVar[0]);
-    let min = (Math.random() * (this.minVelVar[1] - this.minVelVar[0]) + this.minVelVar[0]);
-    let skid = (Math.random() * (this.skidVar[1] - this.skidVar[0]) + this.skidVar[0]);
-    return {
-      min,
-      max,
-      skid
-    };
+const cars = {
+  popular: {
+    maxVelVar: [180, 200],
+    minVelVar: [110, 130],
+    skidVar: [0.03, 0.04]
+  },
+  sport: {
+    maxVelVar: [195, 215],
+    minVelVar: [125, 145],
+    skidVar: [0.02, 0.03]
+  },
+  superSport: {
+    maxVelVar: [210, 230],
+    minVelVar: [140, 160],
+    skidVar: [0.01, 0.0175]
   }
 }
 
 function alCar() {
   let chance = Math.random() * 100;
   if (chance >= 0 && chance <= 60) {
-    return popular.definitions();
+    return cars.popular;
   } else if (chance > 60 && chance <= 95) {
-    return sport.definitions();
+    return cars.sport;
   } else {
-    return superSport.definitions();
+    return cars.superSport;
   }
 }
 
-let def = alCar();
-let pedro = new Car(def.min, def.max, def.skid);
-def = alCar();
-let juca = new Car(def.min, def.max, def.skid);
-def = alCar();
-let edna = new Car(def.min, def.max, def.skid);
+function definitions() {
+  let obj = alCar();
+  let max = (Math.random() * (obj.maxVelVar[1] - obj.maxVelVar[0]) + obj.maxVelVar[0]);
+  let min = (Math.random() * (obj.minVelVar[1] - obj.minVelVar[0]) + obj.minVelVar[0]);
+  let skid = (Math.random() * (obj.skidVar[1] - obj.skidVar[0]) + obj.skidVar[0]);
+  return {
+    min,
+    max,
+    skid
+  };
+}
 
-let divPedro =document.getElementById("pedro");
-divPedro.textContent = `Pedro -> VelMin: ${pedro.minimumSpeed} | VelMax: ${pedro.maximumSpeed} | derrp: ${pedro.skid}`;
-let divJuca =document.getElementById("juca");
-divJuca.textContent = `Juca -> VelMin: ${juca.minimumSpeed} | VelMax: ${juca.maximumSpeed} | derrp: ${juca.skid}`;
-let divEdna =document.getElementById("edna");
-divEdna.textContent = `Edna -> VelMin: ${edna.minimumSpeed} | VelMax: ${edna.maximumSpeed} | derrp: ${edna.skid}`;
+const pedro = definitions();
+const juca = definitions();
+const edna = definitions();
+
+const divPedro = document.getElementById("pedro");
+divPedro.textContent = `Pedro -> VelMin: ${pedro.min} | VelMax: ${pedro.max} | derrp: ${pedro.skid}`;
+
+const divJuca = document.getElementById("juca");
+divJuca.textContent = `Juca -> VelMin: ${juca.min} | VelMax: ${juca.max} | derrp: ${juca.skid}`;
+
+const divEdna = document.getElementById("edna");
+divEdna.textContent = `Edna -> VelMin: ${edna.min} | VelMax: ${edna.max} | derrp: ${edna.skid}`;
+
 function randomPedro() {
-  return (Math.random() * (pedro._maximumSpeed - pedro._minimumSpeed) + pedro.minimumSpeed) * (1 - pedro.skid);
+  return (Math.random() * (pedro.max - pedro.min) + pedro.min) * (1 - pedro.skid);
 }
 
 function randomJuca() {
-  return (Math.random() * (juca._maximumSpeed - juca._minimumSpeed) + juca.minimumSpeed) * (1 - juca.skid);
+  return (Math.random() * (juca.max - juca.min) + juca.min) * (1 - juca.skid);
 }
 
 function randomEdna() {
-  return (Math.random() * (edna._maximumSpeed - edna._minimumSpeed) + edna.minimumSpeed) * (1 - edna.skid);
+  return (Math.random() * (edna.max - edna.min) + edna.min) * (1 - edna.skid);
 }
 
 function lapWinner(laps) {
@@ -167,11 +121,15 @@ function lapWinner(laps) {
   }
 }
 
-function fastRun() {
+function erase() {
   let erase1 = document.getElementById("lapsInRun");
   let erase2 = document.getElementById("lapWinner");
   erase1.innerText = "";
   erase2.innerText = "";
+}
+
+function fastRun() {
+  erase();
   let win = lapWinner(10);
   let name = document.getElementById('name');
   name.textContent = 'O vencedor da corrida foi: ' + win;
@@ -181,10 +139,7 @@ function fastRun() {
 }
 
 function granPri() {
-  let erase1 = document.getElementById("lapsInRun");
-  let erase2 = document.getElementById("lapWinner");
-  erase1.innerText = "";
-  erase2.innerText = "";
+  erase();
   let win = lapWinner(70);
   let name = document.getElementById('name');
   name.textContent = 'O vencedor da corrida foi: ' + win;
@@ -194,11 +149,19 @@ function granPri() {
 }
 
 function enduro() {
-  let erase1 = document.getElementById("lapsInRun");
-  let erase2 = document.getElementById("lapWinner");
-  erase1.innerText = "";
-  erase2.innerText = "";
+  erase();
   let win = lapWinner(160);
+  let name = document.getElementById('name');
+  name.textContent = 'O vencedor da corrida foi: ' + win;
+  let operator = document.getElementById("trophel");
+  operator.className = '';
+  operator.classList.add('fas', 'fa-trophy');
+}
+
+function rand() {
+  erase();
+  laps = document.getElementById('rand').value;
+  let win = lapWinner(laps);
   let name = document.getElementById('name');
   name.textContent = 'O vencedor da corrida foi: ' + win;
   let operator = document.getElementById("trophel");

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta property="og:title" content="Corrida de carrinho" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://luanraabe.github.io/3-JavaScript/Carrinho/index.html" />
+    <meta property="og:url" content="https://luanraabe.github.io/3-JavaScript/CarrinhoAleatorio/index.html" />
     <meta property="og:description" content="Em quem você aposta" />
     <meta property="og:image" itemprop="image" content="https://luanraabe.github.io/3-JavaScript/Carrinho/images/speed.png" />
     <meta property="og:image:type" content="image/jpg" />
@@ -36,6 +36,9 @@
             <button onclick="fastRun()">Corrida rápida</button>
             <button onclick="granPri()">Grande Prémio</button>
             <button onclick="enduro()">Enduro</button>
+            <label for="rand">Quantas voltas vc quer?</label>
+            <input type="number" id="rand" max="50000">
+            <button onclick="rand()">GO!</button>
         </section>
         <section id="runers">
             <div id="pedro"></div>
