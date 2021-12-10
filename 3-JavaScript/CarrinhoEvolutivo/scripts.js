@@ -41,7 +41,7 @@ function definitions() {
 
 var runners = [
   {
-    name: 'pedro',
+    name: 'Pedro',
     car: {
       min: '',
       max: '',
@@ -50,7 +50,7 @@ var runners = [
     exp: 0,
     level: 0
   }, {
-    name: 'juca',
+    name: 'Juca',
     car: {
       min: '',
       max: '',
@@ -59,7 +59,7 @@ var runners = [
     exp: 0,
     level: 0
   }, {
-    name: 'edna',
+    name: 'Edna',
     car: {
       min: '',
       max: '',
@@ -73,7 +73,7 @@ var runners = [
 function printRunner(item, index) {
   let carsProperties = document.getElementById("carsProperties");
   let div = document.createElement('div');
-  div.innerHTML = `${runners[index].name} -> VelMin: ${runners[index].car.min.toFixed(2)} | VelMax: ${runners[index].car.max.toFixed(2)} | derrp: ${runners[index].car.skid.toFixed(5)} | Nivel: ${runners[index].level} | Exp: ${runners[index].exp}`;
+  div.innerHTML = `<p>${runners[index].name} </p><p> VelMin: ${runners[index].car.min.toFixed(2)}</p><p>VelMax: ${runners[index].car.max.toFixed(2)}</p><p>derrp: ${runners[index].car.skid.toFixed(5)}</p><p>Nivel: ${runners[index].level}</p><p>Exp: ${runners[index].exp}</p>`;
   div.setAttribute('class', 'runner');
   carsProperties.appendChild(div);
 }
@@ -153,6 +153,42 @@ function lapWinner(laps) {
   }
 }
 
+function firstPlaceMode(n) {
+  if (n <= 10) {
+    return 200;
+  } else if (n > 10) {
+    if (n <= 70) {
+      return 220;
+    } else {
+      return 250;
+    }
+  }
+}
+
+function secondPlaceMode(n) {
+  if (n <= 10) {
+    return 120;
+  } else if (n > 10) {
+    if (n <= 70) {
+      return 130;
+    } else {
+      return 150;
+    }
+  }
+}
+
+function thirdPlaceMode(n) {
+  if (n <= 10) {
+    return 50;
+  } else if (n > 10) {
+    if (n <= 70) {
+      return 75;
+    } else {
+      return 90;
+    }
+  }
+}
+
 function runWinner(number) {
   let n = number;
   let points = lapWinner(n);
@@ -162,49 +198,48 @@ function runWinner(number) {
     points.jucaPoints += points2.jucaPoints;
     points.ednaPoints += points2.ednaPoints;
   }
-  console.log(points);
 
   if (points.pedroPoints > points.jucaPoints) {
     if (points.pedroPoints > points.ednaPoints) {
-      runners[0].exp += 200;
+      runners[0].exp += firstPlaceMode(n);
       if (points.jucaPoints > points.ednaPoints) {
-        runners[1].exp += 120;
-        runners[2].exp += 50;
+        runners[1].exp += secondPlaceMode(n);
+        runners[2].exp += thirdPlaceMode(n);
       } else {
-        runners[2].exp += 120;
-        runners[1].exp += 50;
+        runners[2].exp += secondPlaceMode(n);
+        runners[1].exp += thirdPlaceMode(n);
       }
       return 'Pedro';
     } else {
-      runners[2].exp += 200;
+      runners[2].exp += firstPlaceMode(n);
       if (points.pedroPoints > points.jucaPoints) {
-        runners[0].exp += 120;
-        runners[1].exp += 50;
+        runners[0].exp += secondPlaceMode(n);
+        runners[1].exp += thirdPlaceMode(n);
       } else {
-        runners[1].exp += 120;
-        runners[0].exp += 50;
+        runners[1].exp += secondPlaceMode(n);
+        runners[0].exp += thirdPlaceMode(n);
       }
       return 'Edna';
     }
   } else {
     if (points.jucaPoints > points.ednaPoints) {
-      runners[1].exp += 200;
+      runners[1].exp += firstPlaceMode(n);
       if (points.pedroPoints > points.ednaPoints) {
-        runners[0].exp += 120;
-        runners[2].exp += 50;
+        runners[0].exp += secondPlaceMode(n);
+        runners[2].exp += thirdPlaceMode(n);
       } else {
-        runners[2].exp += 120;
-        runners[0].exp += 50;
+        runners[2].exp += secondPlaceMode(n);
+        runners[0].exp += thirdPlaceMode(n);
       }
       return 'Juca';
     } else {
-      runners[2].exp += 200;
+      runners[2].exp += firstPlaceMode(n);
       if (points.pedroPoints > points.jucaPoints) {
-        runners[0].exp += 120;
-        runners[1].exp += 50;
+        runners[0].exp += secondPlaceMode(n);
+        runners[1].exp += thirdPlaceMode(n);
       } else {
-        runners[1].exp += 120;
-        runners[0].exp += 50;
+        runners[1].exp += secondPlaceMode(n);
+        runners[0].exp += thirdPlaceMode(n);
       }
       return 'Edna';
     }
