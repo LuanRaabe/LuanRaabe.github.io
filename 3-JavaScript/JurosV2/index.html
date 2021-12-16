@@ -23,8 +23,7 @@
 <body>
     <main>
         <h1>Calculadora de Juros</h1>
-        <i id="drop" class="fas fa-caret-down" onclick="dropBox()"></i>
-        <form class="form">
+        <form class="form" id="dataForm">
             <input id="name" type="name" placeholder="Nome do cliente">
             <input id="date" type="date">
             <input id="valor" type="number" placeholder="valor do dividendo">
@@ -32,8 +31,9 @@
             <input type="button" onclick="calcDebt()" value="Calcular juros">
         </form>
         <form class="form">
-            <input type="button" onclick="groupClient()" value="Agrupar por cliente">
             <input type="button" onclick="groupDate()" value="Agrupar por data">
+            <input type="button" onclick="totalPerClient()" value="Agrupar por cliente">
+            <input type="button" onclick="addSomeClients()" value="Adicionar clientes ficticios">
         </form>
         <div class="table">
             <div id="dataHeader">
@@ -48,13 +48,15 @@
             <div id="dataClients"></div>
         </div>
         <div class="line table" id="totals">
-            <div>=></div>
+            <div id="totalPerClient" onclick="dropBox('showTotalPerClient')">Total por cliente</div>
             <div>Total original</div>
             <div id="totalOriginal"></div>
             <div>Total com juros</div>
             <div id="totalWDebts"></div>
         </div>
     </main>
+    <section id="showTotalPerClient"></section>
+    <i id="drop" class="fas fa-caret-down" onclick="dropBox('instructions')"></i>
     <section id="instructions">
         <h3>1 - Adicionar novo usuário</h3>
         <p>Para adicionar um novo cliente à lista, escreva seu nome no campo "Nome do cliente", a data de vencimento da
@@ -63,6 +65,11 @@
         <h3>2 - Calcular juros</h3>
         <p>Após ter adicionado todos as informações de clientes necessárias, precione calcular juros para averiguar
             todas as dívidas e suas correções</p>
+        <h3>3 - Agrupar por cliente ou data</h3>
+        <p>Estas opções lhe darão uma melhor visualização das dívidas as organizando por data de vencimento ou
+            alfabética</p>
+        <h3>4 - Após agupar por cliente</h3>
+        <p>Clique em "Total por cliente" para ver uma forma resumida dos dados por nome de cliente</p>
     </section>
     <script type="text/javascript" src="scripts.js"></script>
 </body>

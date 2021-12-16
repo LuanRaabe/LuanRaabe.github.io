@@ -6,6 +6,11 @@
   border-radius: 5px;
 }
 
+*::-webkit-scrollbar {
+  width: 2px;
+  background-color: #414141;
+}
+
 body {
   display: flex;
   flex-direction: row;
@@ -69,11 +74,6 @@ input::-webkit-input-placeholder {
   background-color: #eee;
 }
 
-#dataClients::-webkit-scrollbar {
-  width: 2px;
-  background-color: #414141;
-}
-
 #drop {
   position: absolute;
   right: 23vw;
@@ -94,4 +94,23 @@ input::-webkit-input-placeholder {
   border-radius: 15px;
   border: solid #414141;
   background-color: #fff;
+}
+
+#showTotalPerClient {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  bottom: 17vh;
+  left: 25vw;
+  width: 50vw;
+  height: 30vh;
+  border-radius: 15px;
+  overflow-y: scroll;
+  border: solid #414141;
+  background-color: #fff;
+}
+
+#totalPerClient {
+  cursor: pointer;
+  background-color: #86ffcd;
 }
