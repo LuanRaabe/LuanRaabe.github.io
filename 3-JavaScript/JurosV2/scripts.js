@@ -205,7 +205,6 @@ function totalPerClient() {
     tClients.push(obj);
     current = last;
   }
-  console.log(tClients);
   let total = document.getElementById("showTotalPerClient");
   total.innerText = '';
   tClients.forEach((item, index) => {
@@ -217,9 +216,10 @@ function totalPerClient() {
     let tToPay = item.reduce(function (acc, elm) {
       return acc += elm.valueToPay;
     }, 0);
+    console.log(item, tOriginal, tToPay);
     let total = document.getElementById("showTotalPerClient");
     let div = document.createElement('div');
-    div.innerHTML = `<div>${item[index].name}</div><div>Total original</div><div>${tOriginal}</div><div>Total com juros</div><div>${tToPay}</div>`;
+    div.innerHTML = `<div>${item[0].name}</div><div>Total original</div><div>${tOriginal}</div><div>Total com juros</div><div>${tToPay}</div>`;
     div.setAttribute('class', 'line');
     total.appendChild(div);
   });
