@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="Cardápio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://luanraabe.github.io/3-JavaScript/Cardapio/index.html" />
+    <meta property="og:description" content="Venha montar um sanduíche a sua vontade" />
+    <title>Tá de castigo!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <section id="parameters">
+            <span id="question">Quantas veses a frase deve ser repetida?</span>
+            <input type="number" id="numberLines" value="0" step="1">
+            <button onclick="reload()">Iniciar</button>
+        </section>
+        <section id="blackboard">
+            <div id="phrase"></div>
+        </section>
+        <section id="info">
+            <div>Foram escritas <span id="lines"></span> linhas no último quadro</div>
+            <div>O quadro foi apagado <span id="erase"></span> vezes</div>
+        </section>
+        <script type="text/javascript" src="scripts.js"></script>
+    </main>
+
+</body>
+
+</html>
